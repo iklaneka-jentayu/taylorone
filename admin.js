@@ -452,7 +452,7 @@ async function saveEdit() {
     const status = document.getElementById('editStatus').value;
     const notes = document.getElementById('editNotes').value;
     const deliveryDate = document.getElementById('editDeliveryDate').value;
-    
+    alert('orderId'+orderId);
     const updateData = {
         action: 'update',
         orderId: orderId,
@@ -460,7 +460,7 @@ async function saveEdit() {
         specialInstructions: notes,
         deliveryDate: deliveryDate
     };
-    
+    alert('saveEdit: orderId'+orderId);
     try {
         const response = await fetch(GOOGLE_SCRIPT_URL, {
             method: 'POST',
@@ -484,10 +484,11 @@ async function saveEdit() {
 }
 
 async function deleteOrder(orderId) {
+    alert('deleteOrder: orderId'+orderId);
     if (!confirm('Are you sure you want to delete this order? This action cannot be undone.')) {
         return;
     }
-    
+    alert('deleteOrder: orderId'+orderId);
     const deleteData = {
         action: 'delete',
         orderId: orderId
