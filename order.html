@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Custom Tailoring | Elite Tailor</title>
+    <meta name="description" content="Order custom suits, shirts, and alterations online. Get perfect fit with our professional tailoring services.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Elite<span>Tailor</span></a>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="order.html" class="btn-nav active">Order Now</a></li>
+                <li><a href="admin.html" class="btn-admin">Admin</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Order Form Section -->
+    <section class="order-section">
+        <div class="container">
+            <h1 class="section-title">Custom Tailoring Order Form</h1>
+            <p class="section-subtitle">Fill out the form below to start your custom tailoring order</p>
+            
+            <div class="order-container">
+                <form id="tailoringOrderForm" class="order-form">
+                    <div class="form-group">
+                        <label for="customerName">Full Name *</label>
+                        <input type="text" id="customerName" name="customerName" required placeholder="Enter your full name">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="serviceType">Service Type *</label>
+                        <select id="serviceType" name="serviceType" required>
+                            <option value="">Select a service</option>
+                            <option value="custom_suit">Custom Suit</option>
+                            <option value="custom_shirt">Custom Shirt</option>
+                            <option value="suit_alteration">Suit Alteration</option>
+                            <option value="pants_alteration">Pants Alteration</option>
+                            <option value="dress_alteration">Dress Alteration</option>
+                            <option value="other">Other Service</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fabricType">Fabric Type (Optional)</label>
+                        <select id="fabricType" name="fabricType">
+                            <option value="">Select fabric type</option>
+                            <option value="wool">Wool</option>
+                            <option value="cotton">Cotton</option>
+                            <option value="linen">Linen</option>
+                            <option value="silk">Silk</option>
+                            <option value="polyester">Polyester Blend</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="color">Preferred Color</label>
+                        <input type="text" id="color" name="color" placeholder="e.g., Navy Blue, Charcoal Gray">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="measurements">Measurements (in inches) *</label>
+                        <textarea id="measurements" name="measurements" required placeholder="Please provide your measurements:
+Chest: 
+Waist: 
+Hips: 
+Inseam: 
+Sleeve Length: " rows="6"></textarea>
+                        <small>Note: We will schedule a fitting appointment for precise measurements</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="specialInstructions">Special Instructions</label>
+                        <textarea id="specialInstructions" name="specialInstructions" placeholder="Any specific details, preferences, or special requests..." rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="deliveryDate">Preferred Delivery Date</label>
+                        <input type="date" id="deliveryDate" name="deliveryDate">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Urgency Level</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="urgency" value="standard" checked>
+                                <span>Standard (2-3 weeks)</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="urgency" value="rush">
+                                <span>Rush (1 week + 20% fee)</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="urgency" value="express">
+                                <span>Express (3 days + 40% fee)</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="budget">Estimated Budget Range</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select budget range</option>
+                            <option value="500-1000">$500 - $1,000</option>
+                            <option value="1000-2000">$1,000 - $2,000</option>
+                            <option value="2000-3000">$2,000 - $3,000</option>
+                            <option value="3000+">$3,000+</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group terms-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <span>I agree to the terms and conditions and understand that a fitting appointment will be scheduled</span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary btn-submit">
+                        <i class="fas fa-paper-plane"></i> Submit Order
+                    </button>
+                    
+                    <div id="formMessage" class="form-message"></div>
+                </form>
+                
+                <div class="order-info">
+                    <h3>What Happens Next?</h3>
+                    <div class="info-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Order Submission</h4>
+                            <p>Submit your order details and we'll review your requirements</p>
+                        </div>
+                    </div>
+                    <div class="info-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Fitting Appointment</h4>
+                            <p>We'll contact you to schedule a precise measurement session</p>
+                        </div>
+                    </div>
+                    <div class="info-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Fabric Selection</h4>
+                            <p>Choose from our premium fabric collection during your appointment</p>
+                        </div>
+                    </div>
+                    <div class="info-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Creation & Fittings</h4>
+                            <p>Our master tailors create your garment with multiple fitting sessions</p>
+                        </div>
+                    </div>
+                    <div class="info-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Final Delivery</h4>
+                            <p>Receive your perfectly tailored garment, ready to wear</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <h4>Need Help?</h4>
+                        <p><i class="fas fa-phone"></i> Call us: (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> Email: orders@elitetailor.com</p>
+                        <p><i class="fas fa-clock"></i> Hours: Mon-Sat 9am-6pm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="order.js"></script>
+</body>
+</html>

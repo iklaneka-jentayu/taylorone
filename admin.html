@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Elite Tailor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Admin Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-user-secret"></i> Admin Panel</h2>
+                <p>Elite Tailor Management</p>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-item active" data-section="dashboard">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+                <a href="#orders" class="nav-item" data-section="orders">
+                    <i class="fas fa-shopping-bag"></i> Orders
+                </a>
+                <a href="#customers" class="nav-item" data-section="customers">
+                    <i class="fas fa-users"></i> Customers
+                </a>
+                <a href="#addOrder" class="nav-item" data-section="addOrder">
+                    <i class="fas fa-plus-circle"></i> Add New Order
+                </a>
+                <a href="index.html" class="nav-item">
+                    <i class="fas fa-home"></i> Back to Site
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <div>
+                        <strong>Admin User</strong>
+                        <small>elite.tailor@admin.com</small>
+                    </div>
+                </div>
+                <button id="logoutBtn" class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1 id="sectionTitle">Dashboard</h1>
+                <div class="header-actions">
+                    <button id="refreshData" class="btn-action">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                    <button id="exportData" class="btn-action">
+                        <i class="fas fa-download"></i> Export
+                    </button>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="admin-section active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="totalOrders">0</h3>
+                            <p>Total Orders</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="totalCustomers">0</h3>
+                            <p>Total Customers</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="pendingOrders">0</h3>
+                            <p>Pending Orders</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="completedOrders">0</h3>
+                            <p>Completed Orders</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-orders">
+                    <h3>Recent Orders</h3>
+                    <div class="table-container">
+                        <table id="recentOrdersTable">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Service</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Orders Section -->
+            <section id="orders" class="admin-section">
+                <div class="section-header">
+                    <h2>All Orders</h2>
+                    <div class="section-actions">
+                        <input type="text" id="searchOrders" placeholder="Search orders..." class="search-input">
+                        <select id="filterStatus" class="filter-select">
+                            <option value="">All Status</option>
+                            <option value="pending">Pending</option>
+                            <option value="in_progress">In Progress</option>
+                            <option value="ready_for_fitting">Ready for Fitting</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table id="ordersTable">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Service</th>
+                                <th>Fabric</th>
+                                <th>Status</th>
+                                <th>Order Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Customers Section -->
+            <section id="customers" class="admin-section">
+                <div class="section-header">
+                    <h2>Customers</h2>
+                    <input type="text" id="searchCustomers" placeholder="Search customers..." class="search-input">
+                </div>
+                <div class="table-container">
+                    <table id="customersTable">
+                        <thead>
+                            <tr>
+                                <th>Customer ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Total Orders</th>
+                                <th>Last Order</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Add Order Section -->
+            <section id="addOrder" class="admin-section">
+                <h2>Add New Order</h2>
+                <form id="adminOrderForm" class="admin-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="adminCustomerName">Customer Name *</label>
+                            <input type="text" id="adminCustomerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="adminEmail">Email *</label>
+                            <input type="email" id="adminEmail" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="adminPhone">Phone *</label>
+                            <input type="tel" id="adminPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="adminServiceType">Service Type *</label>
+                            <select id="adminServiceType" required>
+                                <option value="">Select service</option>
+                                <option value="custom_suit">Custom Suit</option>
+                                <option value="custom_shirt">Custom Shirt</option>
+                                <option value="suit_alteration">Suit Alteration</option>
+                                <option value="pants_alteration">Pants Alteration</option>
+                                <option value="dress_alteration">Dress Alteration</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="adminFabric">Fabric Type</label>
+                            <input type="text" id="adminFabric">
+                        </div>
+                        <div class="form-group">
+                            <label for="adminColor">Color</label>
+                            <input type="text" id="adminColor">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="adminMeasurements">Measurements</label>
+                        <textarea id="adminMeasurements" rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="adminStatus">Status *</label>
+                            <select id="adminStatus" required>
+                                <option value="pending">Pending</option>
+                                <option value="in_progress">In Progress</option>
+                                <option value="ready_for_fitting">Ready for Fitting</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="adminDeliveryDate">Delivery Date</label>
+                            <input type="date" id="adminDeliveryDate">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="adminNotes">Notes</label>
+                        <textarea id="adminNotes" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-save"></i> Save Order
+                        </button>
+                        <button type="reset" class="btn-secondary">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                    </div>
+                    
+                    <div id="adminMessage" class="form-message"></div>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <!-- Edit Order Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Order</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="editOrderForm">
+                    <input type="hidden" id="editOrderId">
+                    <div class="form-group">
+                        <label for="editStatus">Status</label>
+                        <select id="editStatus">
+                            <option value="pending">Pending</option>
+                            <option value="in_progress">In Progress</option>
+                            <option value="ready_for_fitting">Ready for Fitting</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="editNotes">Notes</label>
+                        <textarea id="editNotes" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="editDeliveryDate">Delivery Date</label>
+                        <input type="date" id="editDeliveryDate">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="saveEdit" class="btn-primary">Save Changes</button>
+                <button id="deleteOrder" class="btn-danger">Delete Order</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
