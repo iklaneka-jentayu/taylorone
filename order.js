@@ -1,6 +1,6 @@
 // Google Apps Script Web App URL
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzbuaUUSy8eFG8gikaBQT8RxbAppk-banrQOkevYqWeNLYNEJGaiOtYyhACLrHjatmT7A/exec';
-
+//https://script.google.com/macros/s/AKfycbzbuaUUSy8eFG8gikaBQT8RxbAppk-banrQOkevYqWeNLYNEJGaiOtYyhACLrHjatmT7A/exec
 document.addEventListener('DOMContentLoaded', function() {
     const orderForm = document.getElementById('tailoringOrderForm');
     const formMessage = document.getElementById('formMessage');
