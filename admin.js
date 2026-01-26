@@ -465,6 +465,7 @@ async function saveEdit() {
         deliveryDate: deliveryDate
     };
     alert('update: orderId'+orderId+'- GOOGLE_SCRIPT_URL : '+GOOGLE_SCRIPT_URL);
+    alert('update data: '+JSON.stringify(updateData));
     try {
         const response = await fetch(GOOGLE_SCRIPT_URL, {
             method: 'POST',
