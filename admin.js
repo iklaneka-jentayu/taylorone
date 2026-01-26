@@ -332,6 +332,8 @@ async function createOrderFromAdmin() {
         urgency: 'standard',
         budget: 'Not specified'
     };
+
+    alert('orderData'+JSON.stringify(orderData));
     alert('create: - GOOGLE_SCRIPT_URL : '+GOOGLE_SCRIPT_URL);
     try {
         // Send to Google Sheets
