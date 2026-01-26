@@ -40,7 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     budget: formData.get('budget') || 'Not specified',
                     status: 'pending'
                 };
-                
+
+                alert('orderData'+JSON.Strigify(orderData));
                 // Send to Google Sheets via Google Apps Script
                 const response = await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
