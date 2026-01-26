@@ -334,7 +334,7 @@ async function createOrderFromAdmin() {
     };
 
     alert('orderData.......');
-    alert('create: - GOOGLE_SCRIPT_URL : '+GOOGLE_SCRIPT_URL);
+    alert('create: - GOOGLE_SCRIPT_URL : '+GOOGLE_SCRIPT_URL+'-orderdata-'+JSON.stringify(orderData));
     alert('orderData'+JSON.stringify(orderData));
     
     try {
