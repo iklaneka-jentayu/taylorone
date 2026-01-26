@@ -1,6 +1,6 @@
 // Admin JavaScript for CRUD operations
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzbuaUUSy8eFG8gikaBQT8RxbAppk-banrQOkevYqWeNLYNEJGaiOtYyhACLrHjatmT7A/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwenI5eITam0zeWMzXc6xs0SzX0RtkTczvkMjEqJeoeUiuJVx0xtlxYmV7mg4TbJFlYWw/exec';
 let allOrders = [];
 let allCustomers = [];
 
