@@ -341,6 +341,7 @@ async function createOrderFromAdmin() {
         // Send to Google Sheets
         const response = await fetch(GOOGLE_SCRIPT_URL, {
             method: 'POST',
+            mode: 'no-cors', // For GitHub Pages compatibility
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -469,6 +470,7 @@ async function saveEdit() {
     try {
         const response = await fetch(GOOGLE_SCRIPT_URL, {
             method: 'POST',
+            mode: 'no-cors', // For GitHub Pages compatibility
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -504,6 +506,7 @@ async function deleteOrder(orderId) {
     try {
         const response = await fetch(GOOGLE_SCRIPT_URL, {
             method: 'POST',
+            mode: 'no-cors', // For GitHub Pages compatibility
             headers: {
                 'Content-Type': 'application/json',
             },
