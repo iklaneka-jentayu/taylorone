@@ -333,8 +333,10 @@ async function createOrderFromAdmin() {
         budget: 'Not specified'
     };
 
-    alert('orderData'+JSON.stringify(orderData));
+    alert('orderData.......');
     alert('create: - GOOGLE_SCRIPT_URL : '+GOOGLE_SCRIPT_URL);
+    alert('orderData'+JSON.stringify(orderData));
+    
     try {
         // Send to Google Sheets
         const response = await fetch(GOOGLE_SCRIPT_URL, {
