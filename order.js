@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     status: 'pending'
                 };
 
-                alert('orderData-'+JSON.stringify(orderData));
+                // alert('orderData-'+JSON.stringify(orderData));
                 // Send to Google Sheets via Google Apps Script
                 const response = await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
