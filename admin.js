@@ -333,9 +333,9 @@ async function createOrderFromAdmin() {
         budget: 'Not specified'
     };
 
-    alert('orderData.......');
-    alert('create: - GOOGLE_SCRIPT_URL : '+GOOGLE_SCRIPT_URL+'-orderdata-'+JSON.stringify(orderData));
-    alert('orderData'+JSON.stringify(orderData));
+    // alert('orderData.......');
+    // alert('create: - GOOGLE_SCRIPT_URL : '+GOOGLE_SCRIPT_URL+'-orderdata-'+JSON.stringify(orderData));
+    // alert('orderData'+JSON.stringify(orderData));
     
     try {
         // Send to Google Sheets
@@ -457,7 +457,7 @@ async function saveEdit() {
     const status = document.getElementById('editStatus').value;
     const notes = document.getElementById('editNotes').value;
     const deliveryDate = document.getElementById('editDeliveryDate').value;
-    alert('orderId'+orderId);
+    // alert('orderId'+orderId);
     const updateData = {
         action: 'update',
         orderId: orderId,
@@ -465,8 +465,8 @@ async function saveEdit() {
         specialInstructions: notes,
         deliveryDate: deliveryDate
     };
-    alert('update: orderId'+orderId+'- GOOGLE_SCRIPT_URL : '+GOOGLE_SCRIPT_URL);
-    alert('update data: '+JSON.stringify(updateData));
+    // alert('update: orderId'+orderId+'- GOOGLE_SCRIPT_URL : '+GOOGLE_SCRIPT_URL);
+    // alert('update data: '+JSON.stringify(updateData));
     try {
         const response = await fetch(GOOGLE_SCRIPT_URL, {
             method: 'POST',
@@ -501,7 +501,7 @@ async function deleteOrder(orderId) {
         orderId: orderId
     };
     
-    alert('delete: orderId'+orderId+'- GOOGLE_SCRIPT_URL : '+GOOGLE_SCRIPT_URL);
+    // alert('delete: orderId'+orderId+'- GOOGLE_SCRIPT_URL : '+GOOGLE_SCRIPT_URL);
     
     try {
         const response = await fetch(GOOGLE_SCRIPT_URL, {
@@ -607,5 +607,5 @@ window.viewCustomerOrders = function(email) {
         message += `${index + 1}. ${order.orderId} - ${formatServiceType(order.serviceType)} - ${formatStatus(order.status)}\n`;
     });
     
-    alert(message);
+    // alert(message);
 };
